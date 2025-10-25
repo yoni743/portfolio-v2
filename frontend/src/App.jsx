@@ -6,6 +6,7 @@ import About from './sections/About'
 import Projects from './sections/Projects'
 import Skills from './sections/Skills'
 import Contact from './sections/Contact'
+import Education from './sections/Education'
 
 export default function App() {
   const [active, setActive] = useState('home')
@@ -25,6 +26,9 @@ export default function App() {
         </motion.section>
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} id="skills" className="py-16">
           <Skills />
+        </motion.section>
+        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} id="education" className="py-16 bg-white dark:bg-slate-900">
+          <Education />
         </motion.section>
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} id="contact" className="py-16 bg-white dark:bg-slate-900">
           <Contact />
