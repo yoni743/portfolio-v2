@@ -14,7 +14,7 @@ export default function Education() {
         <h3 className="text-xl font-semibold">B.Sc. in Computer Science and Engineering</h3>
         <p className="text-gray-600 dark:text-slate-300 mt-1">Adama Science and Technology University, Ethiopia</p>
         <p className="mt-2 text-sm text-gray-500 dark:text-slate-400">
-          <span className="font-medium">Graduated:</span> 2024
+          <span className="font-medium">Expected Graduation:</span> July 2026
         </p>
         <p className="mt-2 text-sm text-gray-600 dark:text-slate-300">
           <span className="font-medium">Focus:</span> Software Development, AI, Algorithms, and Full-Stack Engineering

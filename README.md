@@ -122,6 +122,13 @@ After the backend is live, you can wire your frontend to call it by adding `VITE
 - Light/dark mode preference sync to user profile
 - i18n/localization for multi‑language support
 
+## 🎓 Education
+
+**B.Sc. in Computer Science and Engineering**  
+Adama Science and Technology University, Ethiopia  
+*Expected Graduation:* July 2026  
+*Focus:* Software Development, AI, Algorithms, and Full-Stack Engineering
+
 ## 👤 Author
 
 - **Name:** Yonatan Kibrom Mezgebe
