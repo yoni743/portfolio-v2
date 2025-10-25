@@ -125,7 +125,7 @@ After the backend is live, you can wire your frontend to call it by adding `VITE
 ## 🎓 Education
 
 **B.Sc. in Computer Science and Engineering**  
-Adama Science and Technology University, Ethiopia  
+Mekelle Institute of Technology (MIT), Ethiopia  
 *Expected Graduation:* July 2026  
 *Focus:* Software Development, AI, Algorithms, and Full-Stack Engineering
 
