@@ -1,107 +1,137 @@
-# Full-Stack Portfolio (React + Node/Express)
+<div align="center">
 
-Deployment URL: <add-your-Netlify-URL-here>
+# Yonatan Kibrom Mezgebe — Full‑Stack Developer 🚀
 
-A clean, responsive portfolio website with a React frontend and a Node.js/Express backend. The contact form uses Formspree for email handling.
+Modern, responsive developer portfolio built with React, Vite, Tailwind CSS, and Framer Motion. Contact is powered by Formspree.
 
-## Structure
+[Frontend (Live)](https://portfolio743.netlify.app) · [Backend (Live – placeholder APIs)](https://portfolio-v2-ekae.onrender.com) · [Project Repo](https://github.com/yoni743/portfolio-v2)
 
-- `frontend/` — React app (Vite) + Tailwind CSS + React Router + Framer Motion
-- `backend/` — Node.js + Express server with `/contact` endpoint and CORS (no email sending; reserved for future APIs). Backend is not deployed yet.
+</div>
 
-## Quick Start
+---
 
-### 1) Clone and install
+## 🔗 Live Demos
+
+- **Frontend:** https://portfolio743.netlify.app
+- **Backend (placeholder APIs):** https://portfolio-v2-ekae.onrender.com
+
+The backend currently serves placeholder endpoints and is reserved for future features. The contact form uses Formspree (no backend dependency).
+
+## 🧱 Project Structure
+
+```
+Portfolio/
+├── frontend/               # React + Vite + Tailwind + Framer Motion
+│   ├── src/
+│   │   ├── components/
+│   │   ├── sections/
+│   │   ├── data/
+│   │   └── utils/
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   └── netlify.toml        # SPA redirects
+└── backend/                # Node.js + Express (placeholder APIs)
+    ├── server.js
+    ├── package.json
+    └── .env.example        # PORT, CORS_ORIGIN
+```
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React 18, Vite, Tailwind CSS, Framer Motion, React Router
+- **Contact:** Formspree (Form ID: `mgvpwnpa`)
+- **Backend:** Node.js, Express (CORS enabled; placeholder routes)
+- **Deployment:** Netlify (frontend), Render (backend)
+
+## ✉️ Contact Form (Formspree)
+
+The portfolio uses Formspree for secure, serverless form handling.
+
+- Form ID: `mgvpwnpa`
+- Frontend posts directly to Formspree using `@formspree/react`
+- Success and validation states are handled in `frontend/src/sections/Contact.jsx`
+
+No backend is required for email delivery. You can switch to your own backend in the future if desired.
+
+## 🧑‍💻 Local Development
+
+Clone the repo and install dependencies for both apps.
 
 ```bash
 # From project root
-cd frontend
-npm install
-
-cd ../backend
-npm install
+cd frontend && npm install
+cd ../backend && npm install
 ```
 
-### 2) Environment variables
-
-- Frontend: copy `frontend/.env.example` to `frontend/.env` and set `VITE_API_BASE_URL` to your backend URL (only required if you add APIs), e.g. `http://localhost:5000`.
-- Backend: copy `backend/.env.example` to `backend/.env` and set:
-  - `PORT` (optional, defaults to 5000)
-  - `CORS_ORIGIN` (e.g., `http://localhost:5173` in dev, or your Netlify domain in prod)
-
-### 3) Run in development
-
-In two terminals:
+Run dev servers in two terminals:
 
 ```bash
-# Terminal A - frontend
+# Terminal A - frontend (Vite)
 cd frontend
-npm run dev
+npm run dev  # http://localhost:5173
 
-# Terminal B - backend
+# Terminal B - backend (Express)
 cd backend
-npm run dev
+npm run dev  # http://localhost:5000
 ```
 
-Frontend dev server will print a local URL (usually http://localhost:5173). Backend defaults to http://localhost:5000.
-
-### 4) Build (frontend)
+Build the frontend:
 
 ```bash
 cd frontend
-npm run build
+npm run build  # outputs to frontend/dist
 ```
 
-This outputs to `frontend/dist/`.
+Environment variables:
 
-## Deployment
+- Frontend: `frontend/.env` (none required for Formspree)
+- Backend: `backend/.env` supports `PORT` and `CORS_ORIGIN` only
 
-### Frontend on Netlify
+## 🚀 Deployment
+
+### Netlify (Frontend)
 
 - Base directory: `frontend/`
 - Build command: `npm run build`
 - Publish directory: `dist`
-- Environment variables (optional):
-  - `VITE_API_BASE_URL` = your backend base URL (only if your frontend calls the backend)
-- SPA routing is configured via `frontend/netlify.toml` (redirects all routes to `/index.html`).
+- SPA routing: `frontend/netlify.toml` contains `/* -> /index.html` redirect
+- Env vars: none required (unless your frontend will call the backend)
 
-Deploy via UI:
-- New site from Git or manual deploy pointing to `frontend/`.
+Steps (UI):
 
-Quick checklist:
-- Ensure `frontend/netlify.toml` exists with SPA redirect to `/index.html`.
-- Ensure Contact form uses Formspree (form ID `mgvpwnpa`).
-- No `VITE_API_BASE_URL` required unless you add backend APIs.
+- Create new site from Git and point to this repo
+- Configure build settings above and deploy
 
-Deploy via CLI (optional):
-- From `frontend/`: `npm run build` then `npx netlify deploy` (or `netlify deploy` if installed globally), and select `dist`.
+### Render (Backend – optional, placeholder APIs)
 
-### Backend on Render (or Railway) — optional (for future APIs)
+- Service: Web Service, root at `backend/`
+- Build command: `npm install`
+- Start command: `npm start`
+- Env vars:
+  - `PORT` (Render sets it automatically)
+  - `CORS_ORIGIN` = your Netlify domain
 
-- Create a new Web Service from the `backend/` directory or repository subfolder.
-- Build Command: `npm install`
-- Start Command: `npm start`
-- Node version: default or your preference
-- Environment variables:
-  - `PORT` (platform typically sets this automatically)
-  - `CORS_ORIGIN` = your Netlify site URL (e.g., `https://your-site.netlify.app`)
+After the backend is live, you can wire your frontend to call it by adding `VITE_API_BASE_URL` in Netlify’s site settings (not needed for Formspree).
 
-After backend is live, update your Netlify frontend env var `VITE_API_BASE_URL` to the Render/Railway backend URL and redeploy the frontend.
+## 🔮 Future Enhancements
 
-## Tech
+- Dynamic projects sourced from a CMS or database
+- `/api/projects` returning curated project data
+- `/api/contact/analytics` to track contact conversions
+- Light/dark mode preference sync to user profile
+- i18n/localization for multi‑language support
 
-- React 18, Vite, React Router, Framer Motion
-- Tailwind CSS for styling
-- Express, CORS (backend reserved for future APIs)
+## 👤 Author
 
-## Project Sections
+- **Name:** Yonatan Kibrom Mezgebe
+- **Title:** Full‑Stack Developer
+- **Location:** Ethiopia
+- **Email:** <yonatankibrom4@gmail.com>
+- **GitHub:** https://github.com/yoni743
+- **Live Site:** https://portfolio743.netlify.app
+- **Backend (placeholder):** https://portfolio-v2-ekae.onrender.com
 
-- Hero, About, Projects, Skills, Contact
-- Projects have title, image, GitHub/demo links
-- Contact form uses Formspree (form ID `mgvpwnpa`)
+## 📄 License
 
-## Notes
-
-- The backend is intentionally lightweight and does not send emails; the contact form is handled by Formspree.
-- Future APIs plan: endpoints like `/api/projects` and `/api/contact/analytics` are scaffolded as placeholders in `backend/server.js` and can be implemented later.
-- Keep credentials in environment variables only. Never commit secrets.
+MIT License — feel free to use this as a starter for your own portfolio. Attribution appreciated.
