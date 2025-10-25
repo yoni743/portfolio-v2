@@ -1,5 +1,12 @@
 const projects = [
   {
+    title: 'AI Chatbot Prototype',
+    description: 'An NLP chatbot built with TensorFlow and NLTK, achieving 80% test accuracy. Tech: Python, TensorFlow, NLTK. Category: Machine Learning.',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80&auto=format&fit=crop',
+    demo: null,
+    github: 'https://github.com/yoni743/ai-chatbot',
+  },
+  {
     title: 'E-Commerce Web App — Full-Stack (MERN + n8n)',
     description: 'Developed a full-stack store with login, cart, and automated order management. Tech: React, Node.js, MongoDB, n8n. Impact: Simulated 200+ concurrent users.',
     image: 'https://images.unsplash.com/photo-1519337265831-281ec6cc8514?w=1200&q=80&auto=format&fit=crop',

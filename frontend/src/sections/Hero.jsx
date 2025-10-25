@@ -27,9 +27,10 @@ export default function Hero() {
       >
         Connect: <a className="text-primary underline" href="https://www.linkedin.com/in/yonatan-kibrom-827a2028b" target="_blank" rel="noreferrer">LinkedIn</a> · <a className="text-primary underline" href="https://github.com/yoni743" target="_blank" rel="noreferrer">GitHub</a>
       </motion.p>
-      <motion.div className="mt-8 flex gap-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
+      <motion.div className="mt-8 flex gap-4 flex-wrap" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
         <a href="#projects" className="px-5 py-2.5 rounded bg-primary text-white">View Projects</a>
         <a href="#contact" className="px-5 py-2.5 rounded border">Contact Me</a>
+        <a href="/Yonatan Kibrom_RESUME.pdf" className="px-5 py-2.5 rounded border" target="_blank" rel="noreferrer" aria-label="Download Resume PDF">Download Resume</a>
       </motion.div>
     </div>
   )
